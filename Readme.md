@@ -1,4 +1,4 @@
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/poo29004/java-of-empires/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/poo29004/java-of-empires/master/LICENSE) [![Build Status](https://travis-ci.org/poo29004/java-of-empires.svg?branch=master)](https://travis-ci.org/poo29004/java-of-empires)
 
 #  Java of Empires
 

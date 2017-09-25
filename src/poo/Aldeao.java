@@ -28,30 +28,31 @@ import javax.swing.JPanel;
  *
  * http://docente.ifsc.edu.br/mello
  */
-public class Aldeao {
+public class Aldeao extends Personagem{
 
-   private JPanel pai;  // referência ao JPanel onde será desenhado o Aldeao
+   //private JPanel pai;  // referência ao JPanel onde será desenhado o Aldeao
    private Image icone; // imagem do Aldeao
    private String imagemNome; // nome da imagem do Aldeao
    private int largura; // largura da imagem
    private int altura;  // altura da imagem
    private int posX;    // posição X no JPanel onde a imagem será desenhada
    private int posY;    // posição Y no JPanel onde a imagem será desenhada
-   private boolean atacando; // indica se está atacando ou não
+   //private boolean atacando; // indica se está atacando ou não
 
-   
-   public Aldeao(JPanel p, String img, int x, int y) {
-
-      this.imagemNome = img;
+    public Aldeao(JPanel pai, String imagemNome,boolean atacando,int x,int y) {
+      super(pai, atacando);
+      this.imagemNome = imagemNome;
       this.icone = this.carregarImagem(this.imagemNome);
       this.largura = this.icone.getWidth(null);
       this.altura = this.icone.getHeight(null);
-
-      this.pai = p;
+      //this.pai = pai;
       this.posX = x;
       this.posY = y;
-      this.atacando = false;
-   }
+      
+        
+    }
+
+   
 
    /**
     * Desenhando o Aldeão, nas coordenadas X e Y, com a imagem 'icone'

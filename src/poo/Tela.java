@@ -30,14 +30,14 @@ import java.util.ArrayList;
 public class Tela extends javax.swing.JPanel {
 
    private Principal pai;   // referência o JFrame 'pai'
-   private ArrayList<Aldeao> aldeoes; // Lista com os Aldeoes
+   private ArrayList<Personagem> personagens; // Lista com os Aldeoes
 
    /** Creates new form Tela */
    public Tela(Principal aThis) {
       initComponents();
       this.pai = aThis;
       this.setBackground(Color.white); // muda a cor do fundo para branco
-      this.aldeoes = new ArrayList<Aldeao>();
+      this.personagens = new ArrayList<Personagem>();
    }
 
    /**
@@ -51,7 +51,7 @@ public class Tela extends javax.swing.JPanel {
       super.paint(g);
       
       // Percorrendo a lista de aldeoes
-      for (Aldeao aldeao : aldeoes) {
+      for (Personagem aldeao : personagens) {
          aldeao.desenhar(g);
       }
       
@@ -65,9 +65,9 @@ public class Tela extends javax.swing.JPanel {
     * @param y coordenada Y
     */
    public void criarAldeao(int x, int y) {
-      Aldeao a = new Aldeao(this, "aldeao", x, y);
+      Aldeao a = new Aldeao(this, "aldeao",false, x, y);
       a.desenhar(super.getGraphics());
-      aldeoes.add(a);
+      personagens.add(a);
    }
 
    /**
@@ -75,7 +75,7 @@ public class Tela extends javax.swing.JPanel {
     * @param direcao 
     */
    public void movimentarAldeao(int direcao){
-      for (Aldeao aldeao : aldeoes) {
+      for (Personagem aldeao : personagens) {
          aldeao.mover(direcao);
       }
       // Depois que as coordenadas foram atualizadas é necessário repintar o
@@ -87,7 +87,7 @@ public class Tela extends javax.swing.JPanel {
     * Altera o estado do aldeão de atacando para não atacando e vice-versa
     */
    public void atacarAldeao(){
-      for (Aldeao aldeao : aldeoes) {
+      for (Personagem aldeao : personagens) {
          aldeao.atacar();
       }
       this.repaint();
